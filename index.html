@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js">
+
+  </script>
+  <style>
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .h-auto {
+      height: auto;
+    }
+
+    .right-0 {
+      right: 0;
+    }
+
+
+    .bottom-0 {
+      bottom: 0;
+    }
+
+    .left-0 {
+      left: 0;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .relative {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Test</h1>
+  <div class="image-container w-full relative">
+    <img id="image-1" src="http://localhost:4000/images/000001.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full opacity-0">
+    <img id="image-2" src="http://localhost:4000/images/000002.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-3" src="http://localhost:4000/images/000003.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-4" src="http://localhost:4000/images/000004.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-5" src="http://localhost:4000/images/000005.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-6" src="http://localhost:4000/images/000006.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-7" src="http://localhost:4000/images/000007.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-8" src="http://localhost:4000/images/000008.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-9" src="http://localhost:4000/images/000009.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-10" src="http://localhost:4000/images/000010.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-11" src="http://localhost:4000/images/000011.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-12" src="http://localhost:4000/images/000012.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-13" src="http://localhost:4000/images/000013.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0">
+    <img id="image-14" src="http://localhost:4000/images/000014.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-15" src="http://localhost:4000/images/000015.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-16" src="http://localhost:4000/images/000016.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-17" src="http://localhost:4000/images/000017.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-18" src="http://localhost:4000/images/000018.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-19" src="http://localhost:4000/images/000019.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-20" src="http://localhost:4000/images/000020.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-21" src="http://localhost:4000/images/000021.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-22" src="http://localhost:4000/images/000022.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-23" src="http://localhost:4000/images/000023.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-24" src="http://localhost:4000/images/000024.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-25" src="http://localhost:4000/images/000025.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-26" src="http://localhost:4000/images/000026.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-27" src="http://localhost:4000/images/000027.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-28" src="http://localhost:4000/images/000028.png" width="1890" height="1080" loading="lazy"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+  </div>
+  <div class="slidecontainer">
+    <input type="range" min="1" max="28" value="13" id="myRange" class="slider w-full">
+  </div>
+  <p>Selected Value:
+  <div id="sample">
+  </div>
+  </p>
+
+
+
+  <script>
+
+    var socket = io();
+    socket.on('data', function (data) {
+      var obj = JSON.parse(data)
+      console.log(obj.value);
+      document.getElementById('sample').innerHTML = obj.value;
+      document.getElementById("myRange").value = obj.value;
+
+      document
+        .querySelectorAll(".image")
+        .forEach((el) => el.classList.add("opacity-0"));
+      document
+        .getElementById("image-" + obj.value)
+        .classList.remove("opacity-0");
+    })
+
+
+
+    const slider = document.getElementById("myRange");
+    const output = document.getElementById("demo");
+    output.innerHTML = slider.value; // Display the default slider value
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+      document
+        .querySelectorAll(".image")
+        .forEach((el) => el.classList.add("opacity-0"));
+      document
+        .getElementById("image-" + slider.value)
+        .classList.remove("opacity-0");
+    };
+  </script>
+</body>
+
+</html>
