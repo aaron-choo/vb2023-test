@@ -26,7 +26,6 @@
       right: 0;
     }
 
-
     .bottom-0 {
       bottom: 0;
     }
@@ -121,13 +120,16 @@
 
   <script>
 
+    const slider = document.getElementById("myRange");
+    const output = document.getElementById('sample')
+
     var socket = io();
     socket.on('data', function (data) {
       var obj = JSON.parse(data)
       console.log(obj.value);
       var value = Math.min(Math.max(parseInt(obj.value), 1), 28)
-      document.getElementById('sample').innerHTML = value;
-      document.getElementById("myRange").value = value;
+      output.innerHTML = value;
+      slider.value = value;
 
       document
         .querySelectorAll(".image")
@@ -136,22 +138,6 @@
         .getElementById("image-" + value)
         .classList.remove("opacity-0");
     })
-
-
-
-    const slider = document.getElementById("myRange");
-    const output = document.getElementById("demo");
-    output.innerHTML = slider.value; // Display the default slider value
-    // Update the current slider value (each time you drag the slider handle)
-    slider.oninput = function () {
-      output.innerHTML = this.value;
-      document
-        .querySelectorAll(".image")
-        .forEach((el) => el.classList.add("opacity-0"));
-      document
-        .getElementById("image-" + slider.value)
-        .classList.remove("opacity-0");
-    };
   </script>
 </body>
 
