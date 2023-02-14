@@ -125,14 +125,15 @@
     socket.on('data', function (data) {
       var obj = JSON.parse(data)
       console.log(obj.value);
-      document.getElementById('sample').innerHTML = obj.value;
-      document.getElementById("myRange").value = obj.value;
+      var value = Math.min(Math.max(parseInt(obj.value), 1), 28)
+      document.getElementById('sample').innerHTML = value;
+      document.getElementById("myRange").value = value;
 
       document
         .querySelectorAll(".image")
         .forEach((el) => el.classList.add("opacity-0"));
       document
-        .getElementById("image-" + obj.value)
+        .getElementById("image-" + value)
         .classList.remove("opacity-0");
     })
 
