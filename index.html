@@ -819,9 +819,10 @@
     socket.on('data', function (data) {
       var obj = JSON.parse(data)
       console.log(obj.value);
+      console.log(obj.activated);
       var value = Math.min(Math.max(parseInt(obj.value), 1), 94)
-      output.innerHTML = value;
-      slider.value = value;
+      output.innerHTML = value * 4;
+      slider.value = value * 4;
 
       document
         .querySelectorAll(".image")
@@ -829,7 +830,25 @@
       document
         .getElementById("image-" + value * 4)
         .classList.remove("opacity-0");
+      
+      
+      if (obj.activated == 1) {
+
+        let csv = "Question 1,\n";
+        csv += value + ',';
+        const anchor = document.createElement("a");
+        anchor.href="data:text/csv;charset=utf-8," + encodeURIComponent(csv);
+        anchor.target="_blank";
+        anchor.download = "question1.csv";
+        anchor.click();
+      
+      }
+
+      
     })
+    
+
+    
   </script>
 </body>
 
