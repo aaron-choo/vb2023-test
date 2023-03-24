@@ -814,13 +814,16 @@
 
     const slider = document.getElementById("myRange");
     const output = document.getElementById('sample')
+    var currButton = 0;
+    var prevButton = 0;
 
     var socket = io();
     socket.on('data', function (data) {
       var obj = JSON.parse(data)
-      console.log(obj.value);
-      console.log(obj.activated);
+      // console.log(obj.value);
+      // console.log(obj.activated);
       var value = Math.min(Math.max(parseInt(obj.value), 1), 94)
+      var buttonPress = obj.activated
       output.innerHTML = value * 4;
       slider.value = value * 4;
 
@@ -830,25 +833,29 @@
       document
         .getElementById("image-" + value * 4)
         .classList.remove("opacity-0");
-      
-      
-      if (obj.activated == 1) {
 
-        let csv = "Question 1,\n";
-        csv += value + ',';
-        const anchor = document.createElement("a");
-        anchor.href="data:text/csv;charset=utf-8," + encodeURIComponent(csv);
-        anchor.target="_blank";
-        anchor.download = "question1.csv";
-        anchor.click();
-      
+
+      currButton = buttonPress;
+
+      if (currButton != prevButton) {
+        if (buttonPress == 1) {
+          let csv = "Question 1,\n";
+          csv += value + ',';
+          const anchor = document.createElement("a");
+          anchor.href = "data:text/csv;charset=utf-8," + encodeURIComponent(csv);
+          anchor.target = "_blank";
+          anchor.download = "question1.csv";
+          anchor.click();
+        }
+
+        prevButton = currButton;
       }
 
-      
-    })
-    
 
-    
+    })
+
+
+
   </script>
 </body>
 

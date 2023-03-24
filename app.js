@@ -31,7 +31,7 @@ const parser = new parsers.Readline({
   delimiter: "\r\n",
 });
 
-var port = new SerialPort("/dev/cu.usbmodem14201", {
+var port = new SerialPort("/dev/cu.usbmodem101", {
   baudRate: 9600,
   dataBits: 8,
   parity: "none",
