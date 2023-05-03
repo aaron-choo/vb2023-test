@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are rural aspirations urban opportunities? by Lip Chiong</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js">
+  </script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .opacity-0 {
+      opacity: 0;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .h-auto {
+      height: auto;
+    }
+
+    .right-0 {
+      right: 0;
+    }
+
+    .bottom-0 {
+      bottom: 0;
+    }
+
+    .left-0 {
+      left: 0;
+    }
+
+    .top-0 {
+      top: 0;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .relative {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="image-container w-full relative">
+    <img id="image-1" src="http://localhost:4000/4/1.jpg" width="1920" height="1080"
+      class="image h-auto w-full opacity-0">
+    <img id="image-2" src="http://localhost:4000/4/2.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-3" src="http://localhost:4000/4/3.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-4" src="http://localhost:4000/4/4.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-5" src="http://localhost:4000/4/5.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-6" src="http://localhost:4000/4/6.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-7" src="http://localhost:4000/4/7.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-8" src="http://localhost:4000/4/8.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-9" src="http://localhost:4000/4/9.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-10" src="http://localhost:4000/4/10.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-11" src="http://localhost:4000/4/11.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-12" src="http://localhost:4000/4/12.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-13" src="http://localhost:4000/4/13.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0">
+    <img id="image-14" src="http://localhost:4000/4/14.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-15" src="http://localhost:4000/4/15.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-16" src="http://localhost:4000/4/16.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-17" src="http://localhost:4000/4/17.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-18" src="http://localhost:4000/4/18.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-19" src="http://localhost:4000/4/19.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-20" src="http://localhost:4000/4/20.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-21" src="http://localhost:4000/4/21.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-22" src="http://localhost:4000/4/22.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-23" src="http://localhost:4000/4/23.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-24" src="http://localhost:4000/4/24.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-25" src="http://localhost:4000/4/25.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-26" src="http://localhost:4000/4/26.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-27" src="http://localhost:4000/4/27.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-28" src="http://localhost:4000/4/28.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-29" src="http://localhost:4000/4/29.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+    <img id="image-30" src="http://localhost:4000/4/30.jpg" width="1920" height="1080"
+      class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
+  </div>
+
+  <script>
+    var socket = io();
+    socket.on('data', function (data) {
+      var obj = JSON.parse(data)
+      var value = Math.min(Math.max(parseInt(obj.value), 1), 30)
+      document
+        .querySelectorAll(".image")
+        .forEach((el) => el.classList.add("opacity-0"));
+      document
+        .getElementById("image-" + value)
+        .classList.remove("opacity-0");
+    })
+  </script>
+</body>
+
+</html>

@@ -11,6 +11,7 @@ const PORT = 4000;
 // inside public directory.
 expressapp.use(express.static('public'));
 expressapp.use('/images', express.static('images'));
+expressapp.use('/2', express.static('2'));
 
 // Server setup
 expressapp.listen(PORT, () => {
