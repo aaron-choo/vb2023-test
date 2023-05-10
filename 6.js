@@ -11,6 +11,7 @@ const PORT = 4000;
 // inside public directory.
 expressapp.use(express.static('public'));
 expressapp.use('/images', express.static('images'));
+expressapp.use('/scripts', express.static('scripts'));
 expressapp.use('/6', express.static('6'));
 
 // Server setup

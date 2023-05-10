@@ -13,7 +13,7 @@
       margin: 0;
       width: 100vw;
       height: 100vh;
-      /* cursor: none; */
+      cursor: none;
     }
 
     .opacity-0 {
@@ -167,12 +167,12 @@
       if (value > previousValue) {
         currentValue = value
         gsap.to("#image-" + previousValue, {
-          duration: .3,
-          delay: .3
+          duration: .2,
+          delay: .2
         });
         gsap.to("#image-" + currentValue, {
           autoAlpha: 1,
-          duration: .3
+          duration: .2
         });
         previousValue = currentValue
         return
@@ -184,7 +184,7 @@
         });
         gsap.to("#image-" + previousValue, {
           autoAlpha: 0,
-          duration: .3,
+          duration: .2,
         });
         previousValue = currentValue
         return

@@ -26,22 +26,22 @@ const url = require("url");
 
 var index = fs.readFileSync('4.html');
 
-// var SerialPort = require("serialport");
+var SerialPort = require("serialport");
 
-// const parsers = SerialPort.parsers;
-// const parser = new parsers.Readline({
-//   delimiter: "\r\n",
-// });
+const parsers = SerialPort.parsers;
+const parser = new parsers.Readline({
+  delimiter: "\r\n",
+});
 
-// var port = new SerialPort("/dev/cu.usbmodem2401", {
-//   baudRate: 9600,
-//   dataBits: 8,
-//   parity: "none",
-//   stopBits: 1,
-//   flowControl: false,
-// });
+var port = new SerialPort("/dev/cu.usbmodem2401", {
+  baudRate: 9600,
+  dataBits: 8,
+  parity: "none",
+  stopBits: 1,
+  flowControl: false,
+});
 
-// port.pipe(parser);
+port.pipe(parser);
 
 
 var app = http.createServer(function (req, res) {
@@ -94,16 +94,16 @@ var app = http.createServer(function (req, res) {
   res.end(index);
 });
 
-// var io = require('socket.io').listen(app);
+var io = require('socket.io').listen(app);
 
-// io.on('connection', function (data) {
-//   console.log('Node.js is listening!');
-// })
+io.on('connection', function (data) {
+  console.log('Node.js is listening!');
+})
 
 
-// parser.on("data", function (data) {
-//   console.log(data);
-//   io.emit('data', data)
-// });
+parser.on("data", function (data) {
+  console.log(data);
+  io.emit('data', data)
+});
 
 app.listen(3000);
