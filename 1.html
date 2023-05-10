@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What is top of mind when you walk in the city? by URA</title>
+  <title>How does the Aesthetic and the emotional interact at heritage places? by Jerome Ng Xin Hao</title>
   <script src="http://localhost:4000/scripts/socket.io.js"> </script>
   <script src="http://localhost:4000/scripts/gsap.min.js"></script>
   <style>
@@ -235,7 +235,7 @@
     var socket = io();
     socket.on('data', function (data) {
       var obj = JSON.parse(data)
-      var value = Math.min(Math.max(parseInt(obj.value), 1), 189)
+      var value = Math.min(Math.max(parseInt(obj.value), 1), 66)
       if (value > previousValue) {
         currentValue = value
         gsap.to("#image-" + previousValue, {

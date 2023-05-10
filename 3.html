@@ -447,7 +447,7 @@
     var socket = io();
     socket.on('data', function (data) {
       var obj = JSON.parse(data)
-      var value = Math.min(Math.max(parseInt(obj.value), 1), 30)
+      var value = Math.min(Math.max(parseInt(obj.value), 1), 189)
       if (value > previousValue) {
         currentValue = value
         gsap.to("#image-" + previousValue, {

@@ -20,9 +20,11 @@ nvm use 12.21.0
 
 <!-- Ensure arduino is transmitting value matched to image count -->
 
+Machine 1: 66
 Machine 2: 64
 Machine 3: 189
 Machine 4: 30
+Machine 5: 211
 Machine 6: 78
 
 <!-- Run site using machine number -->
