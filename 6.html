@@ -219,9 +219,43 @@
       class="image h-auto w-full absolute top-0 left-0 bottom-0 right-0 opacity-0">
   </div>
 
+  <div class="slidecontainer">
+    <input type="range" min="1" max="78" value="1" id="myRange" class="slider w-full">
+  </div>
+
   <script>
     let currentValue = 1;
     let previousValue = 1;
+    // const slider = document.getElementById("myRange");
+    // slider.oninput = function () {
+    //   if (+slider.value > previousValue) {
+    //     console.log(currentValue, previousValue, slider.value)
+    //     currentValue = +slider.value
+    //     gsap.to("#image-" + previousValue, {
+    //       duration: .2,
+    //       delay: .2
+    //     });
+    //     gsap.to("#image-" + currentValue, {
+    //       autoAlpha: 1,
+    //       duration: .2
+    //     });
+    //     previousValue = currentValue
+    //     return
+    //   }
+    //   if (+slider.value < previousValue) {
+    //     console.log(currentValue, previousValue, slider.value)
+    //     currentValue = +slider.value
+    //     gsap.set("#image-" + currentValue, {
+    //       autoAlpha: 1,
+    //     });
+    //     gsap.to("#image-" + previousValue, {
+    //       autoAlpha: 0,
+    //       duration: .2,
+    //     });
+    //     previousValue = currentValue
+    //     return
+    //   }
+    // };
     var socket = io();
     socket.on('data', function (data) {
       var obj = JSON.parse(data)
